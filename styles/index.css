@@ -1,0 +1,763 @@
+body {
+    background-image: url("../images/nekomoon_home_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+    position: absolute;
+}
+
+#infoMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4D1E62;
+    height: 40px;
+    width: 70px;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0px 3px 15px #fafafa40;
+    transition: 0.3s;
+}
+
+#infoMenu img {
+    height: 105%;
+    width: auto;
+}
+
+#gameRulesMenu {
+    padding-top: 6px;
+    text-align: center;
+    background-color: #fafafa;
+    max-height: 40px;
+    width: 180px;
+    border-radius: 0px 0px 30px 30px;
+    font-family: "fredoka";
+    color: #4D1E62;
+    font-weight: 600;
+    font-size: 23px;
+    box-shadow: 0px 3px 15px #fafafa40;
+    text-shadow: 0px 3px 6px #00000026;
+    transition: 0.3s;
+}
+
+#infoMenu:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 15px #fafafa80;
+}
+
+#gameRulesMenu:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 15px #fafafa80;
+}
+/*FIN DU HEADER*/
+
+/*LOGO ET FORMULAIRE*/
+#divLogoEtFormulaire {
+    width: 90%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+#responsive {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#divLogo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#divLogo img {
+    width: 85%;
+    height: auto;
+    -webkit-filter: drop-shadow(2px 3px 100px #FFC0AD);
+    filter: drop-shadow(2px 3px 100px #FFC0AD);
+}
+
+#divFormulaire {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+}
+
+#divFormulaire img {
+    width: 55%;
+    height: auto;
+    -webkit-filter: drop-shadow(0px 0px 20px #35003a80);
+    filter: drop-shadow(0px 0px 20px #35003a80);
+    transition: 0.2s;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 30px;
+    font-family: "fredoka";
+    font-weight: 600;
+    color: #fafafa;
+    text-shadow: 0px 3px 7px #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {    
+    align-self: center;
+    width: 300px;
+    border-radius: 50px;
+    padding: 7px 20px;
+    font-size: 18px;
+    font-family: "fredoka";
+    border-color: #CD6FA9;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 6px #00000045;
+}
+
+input[type=text] {
+    border: 1px solid #CD6FA9;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 1px solid #862d73;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #E283B390;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #E283B390;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #E283B390;
+  }
+
+  input:hover {
+    box-shadow: 1px 1px 10px #fafafa;
+  }
+
+  form span {
+    background-color: #D90E8D;
+    text-align: center;
+    position: absolute;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 2.5px;
+    color: #fafafa;
+    box-shadow: inset 0px 3px 6px #fafafa70, 0px 3px 6px #00000043;
+    font-family: 'Fredoka';
+    font-weight: 600;
+    margin-top: 64px;
+    margin-left: 345px;
+  }
+
+  form span:hover {
+    cursor: pointer;
+  }
+
+  #infoInput {
+    width: 190px;
+    height: 50px;
+    background-color: #D90E8D;
+    position: absolute;
+    margin-top: -68px;
+    margin-left: 18px;
+    border-radius: 30px 30px 30px 8px;
+    text-align: center;
+    font-weight: 400;
+    align-items: center;
+    display: flex;
+    color: #fafafa;
+    box-shadow: #fafafa60 0px 0px 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  #infoInput.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  button {
+    margin-top: 10%;
+    background-color: #FF00A0;
+    height: 70px;
+    width: 250px;
+    align-self: center;
+    border-radius: 70px;
+    font-size: 40px;
+    font-family: "fredoka";
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #fafafa;
+    text-shadow: 2px 3px 7px #00000080;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+    border: 1px solid #CD6FA9;
+    transition: 0.2s ease-in-out;
+  }
+
+  button:disabled {
+    color: #bebebe;
+    background-blend-mode: luminosity;
+    mix-blend-mode: luminosity;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  button:hover {
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 15px #FFC0AD;
+    cursor: pointer;
+  }
+/*FIN DE LOGO ET FORMULAIRE*/
+
+/*FENETRES POP UP POUR INFO ET REGLES DU JEU*/
+/*fenetre info*/
+#fenetreInfoMenu {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40%;
+  max-height: 65%;
+  padding: 40px 50px 40px 50px;
+  box-shadow: 0px 0px 20px #fafafa70;
+  background-color: #3c0046;
+  border-radius: 50px 100px;
+  z-index: 10;
+  font-family: "Fredoka";
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#fenetreInfoMenu.active {
+  top: 45%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.disableSelect {
+  user-select: none;
+  pointer-events: none;
+}
+
+.fermerFenetre {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+font-size: 40px;
+font-family: "Comic Neue";
+font-weight: bold;
+margin-top: 10px;
+}
+
+.fermerFenetre a {
+  text-decoration: none;
+  color: #fafafa;
+  border-radius: 50px;
+  background-color: #54236b;
+  width: 4%;
+  height: 8%;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.fermerFenetre a:hover {
+  color: #54236b;
+  background-color: #fafafa;
+  box-shadow: 1px 1px 15px #bebebe;
+  font-weight: 600;
+}
+
+#fenetreInfoMenu h1 {
+  margin-top: -30px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fafafa;
+  background-color: #54236b;
+  border-radius: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+#fenetreInfoMenu h2 {
+  color: #c0289f;
+  font-size: 28px;
+  margin-bottom: -10px;
+}
+
+#fenetreInfoMenu p {
+  font-size: 20px;
+  color: #fee8ff;
+  line-height: 28px;
+}
+
+.textShadow {
+  text-shadow: #00000070 1px 1px 10px;
+}
+
+/*fenetre regles du jeu*/
+#fenetreReglesDuJeu {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40%;
+  max-height: 85%;
+  padding: 30px 50px 30px 50px;
+  box-shadow: 0px 0px 20px #fafafa70;
+  background-color: #3c0046;
+  border-radius: 50px 100px;
+  z-index: 10;
+  font-family: "Fredoka";
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#fenetreReglesDuJeu.active {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#fenetreReglesDuJeu h1 {
+  margin-top: -30px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fafafa;
+  background-color: #54236b;
+  border-radius: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 5px;
+}
+
+#fenetreReglesDuJeu h2 {
+  color: #c0289f;
+  font-size: 28px;
+  margin-bottom: -10px;
+}
+
+#fenetreReglesDuJeu p {
+  font-size: 20px;
+  color: #fee8ff;
+  line-height: 28px;
+}
+
+#lesTroisBonus {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: -40px;
+}
+
+.bonusContainer {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#lesTroisBonus h3 {
+  font-size: 21px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  text-shadow: #fafafa80 1px 1px 15px;
+}
+
+#lesTroisBonus img {
+  text-shadow: #fafafa70 1px 1px 15px;
+  -webkit-filter: drop-shadow(2px 1px 10px #fafafa50);
+  filter: drop-shadow(2px 1px 10px #fafafa50);
+  transition: 0.3s;
+}
+
+#lesTroisBonus img:hover {
+  -webkit-filter: drop-shadow(2px 1px 15px #fafafa80);
+  filter: drop-shadow(2px 1px 15px #fafafa80);
+}
+
+#lesTroisBonus p {
+  font-size: 15px;
+  line-height: normal;
+  text-align: center;
+  padding: 10px;
+}
+/*FIN FENETRES POP UP POUR INFO ET REGLES DU JEU*/
+
+
+/*RESPONSIVE DESIGN*/
+@media (min-width: 720px) and (max-width: 1350px){
+  #fenetreReglesDuJeu {
+    width: 45%;
+  }
+
+  #fenetreReglesDuJeu h1 {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 150%;
+  }
+
+  #fenetreReglesDuJeu h2 {
+    font-size: 160%;
+  }
+
+  #fenetreReglesDuJeu p {
+    font-size: 100%;
+    line-height: 18px;
+  }
+
+  #lesTroisBonus img {
+    width: 50px;
+    height: auto;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+
+  #lesTroisBonus p {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 90%;
+  }
+
+  #lesTroisBonus h3 {
+    font-size: 150%;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+
+  button:disabled {
+    color: #bebebe;
+    background-color: #33333350;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  #fenetreInfoMenu {
+    width: 40%;
+    max-height: 60%;
+    padding: 25px 25px 40px 40px;
+  }
+
+  #fenetreInfoMenu p {
+    font-size: 100%;
+    line-height: 18px;
+  }
+
+  #fenetreInfoMenu h2 {
+    font-size: 130%;
+  }
+
+  #fenetreInfoMenu h1 {
+    font-size: 140%;
+    margin-left: 25%;
+    margin-right: 30%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    padding: 8px 10px;
+    margin-right: 10px;
+  }
+
+  form span {
+    margin-top: 55.2px;
+    margin-left: 310px;
+  }
+
+  #infoInput {
+    width: 200px;
+    margin-top: 12px;
+    margin-left: -190px;
+    border-radius: 30px 10px 30px 30px;
+  }
+  
+}
+
+@media (max-width: 1350px){
+  label { 
+    font-size: 24px;
+    }
+
+    button:disabled {
+      color: #bebebe;
+      background-color: #33333350;
+    }
+  
+    button:disabled:hover {
+      cursor: default ;
+      box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+    }
+
+    #fenetreInfoMenu {
+      width: 55%;
+      max-height: 60%;
+      padding: 25px 25px 40px 40px;
+    }
+  
+    #fenetreInfoMenu p {
+      font-size: 100%;
+      line-height: 18px;
+    }
+  
+    #fenetreInfoMenu h2 {
+      font-size: 130%;
+    }
+  
+    #fenetreInfoMenu h1 {
+      font-size: 140%;
+      margin-left: 25%;
+      margin-right: 30%;
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+
+    .fermerFenetre a {
+      font-size: 15px;
+      padding: 8px 10px;
+      margin-right: 10px;
+    }
+}
+@media (max-width: 720px){
+
+  button:disabled {
+    color: #bebebe;
+    background-color: #33333350;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  button {
+    margin-top: 0;
+      height: 60px;
+      width: 180px;
+      font-size: 30px;
+  }
+
+  label { 
+    font-size: 20px;
+    }
+
+    #divFormulaire img {
+      width: 60%;
+    }
+
+    input {
+      width: 90%;
+      font-size: 15px;
+    }
+
+    #infoMenu {
+      height: 35px;
+      width: 55px;
+  }
+
+  #gameRulesMenu {
+    max-height: 35px;
+    width: 150px;
+    font-size: 18px;
+  }
+
+  header {
+    width: 230px;
+  }
+
+  #infoMenu img {
+    height: 95%;
+  }
+
+  form span {
+    margin-top: 49px;
+    margin-left: 250px;
+    z-index: 1;
+  }
+
+  #infoInput {
+    width: 200px;
+    margin-top: -70px;
+    margin-left: -200px;
+    border-radius: 30px 30px 10px 30px;
+  }
+}  
+
+@media (max-width: 576px){ 
+  #divLogoEtFormulaire {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #responsive {
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+
+  header {
+    width: 170px;
+    margin-left: -40px;
+  }
+
+  #infoMenu {
+    height: 29px;
+    width: 42px;
+  }
+
+  #gameRulesMenu {
+    height: 25px;
+    width: 120px;
+    font-size: 16px;
+    padding-top: 4px;
+  }
+
+  #divFormulaire img {
+    width: 100%;
+  }
+
+  #divLogo img {
+    width: 160%;
+    margin-left: -40%;
+  }
+
+  label {
+    font-size: 21px;
+    width: 300px;
+  }
+  
+  button:disabled {
+    color: #bebebe;
+    background-color: #33333350;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  #fenetreReglesDuJeu {
+    width: 70%;
+    max-height: 75%;
+    padding: 25px 25px 30px 25px;
+  }
+
+  #fenetreReglesDuJeu h1 {
+    font-size: 110%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  #fenetreReglesDuJeu h2 {
+    font-size: 100%;
+  }
+
+  #fenetreReglesDuJeu p {
+    font-size: 80%;
+    line-height: 14px;
+  }
+
+  #lesTroisBonus {
+    font-size: 85%;
+  }
+
+  #lesTroisBonus img {
+    width: 30px;
+    height: auto;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    margin-right: 10px;
+    padding: 5px 10px;
+  }
+
+  #lesTroisBonus p {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  #lesTroisBonus h3 {
+    font-size: 120%;
+  }
+
+  #fenetreInfoMenu {
+    width: 70%;
+    max-height: 60%;
+    padding: 25px 25px 40px 40px;
+  }
+
+  #fenetreInfoMenu p {
+    font-size: 80%;
+    line-height: 15px;
+  }
+
+  #fenetreInfoMenu h2 {
+    font-size: 100%;
+  }
+
+  #fenetreInfoMenu h1 {
+    font-size: 110%;
+    margin-left: 25%;
+    margin-right: 30%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  form span {
+    margin-top: 52px;
+    margin-left: 274px;
+    z-index: 1;
+    height: 18px;
+    width: 18px;
+    font-size: 15px;
+  }
+}
+/*FIN RESPONSIVE DESIGN*/

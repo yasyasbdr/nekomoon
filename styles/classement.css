@@ -1,0 +1,147 @@
+body {
+    background-image: url("../images/background_classement.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px 20px;
+    padding: 0;
+    font-family: "fredoka";
+    overflow: hidden;
+    height: 100vh;
+}
+#partieDroiteEtGauche {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*DEBUT partie droite*/
+#partieLogo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 2.5rem;
+}
+
+#partieLogo img {
+    width: 18rem;
+    -webkit-filter: drop-shadow(0px 0px 20px #35003a80);
+    filter: drop-shadow(0px 0px 20px #35003a80);
+}
+/*FIN partie droite*/
+
+/*DEBUT partie gauche*/
+#partieClassement {
+    width: 65%;
+    height: 100%;
+    padding-top: 30px;
+}
+
+#container{
+    margin: 20px;
+    height: 65%;
+    border-radius: 25px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+
+
+#partieClassement h1 {
+    font-size: 40px;
+    background-color: #351D4B;
+    border-radius: 45px;
+    width: 80%;
+    height: 80px;
+    color: #FAFAFA;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0px 3px 6px #00000070;
+    box-shadow: inset 0px 3px 20px #fafafa50, 0px 3px 20px #00000050;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+#partieClassement a {
+    height: 35%;
+    font-size: 35px;
+    background-color: #FF18A8;
+    border-radius: 45px;
+    width: 300px;
+    height: 70px;
+    color: #FAFAFA;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: 0px 3px 6px #00000070;
+    box-shadow: inset 0px 3px 20px #fafafa, 0px 3px 20px #522C5150;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    margin: auto;
+    transition: all ease-in-out 0.2s;
+}
+
+#partieClassement a:hover {
+    box-shadow: inset 0px 3px 20px #fafafa, 0px 3px 20px #fafafa50;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    color: #fafafa;
+    padding: 20px;
+    background-color: #00000080;
+    text-align: center;
+}
+
+table:hover {
+    box-shadow: #ffffff50 2px 0px 20px;
+}
+
+th {
+    font-weight: 500;
+    font-size: 35px;
+    text-shadow: 0px 3px 20px #00000070;
+    border-bottom: #986E6E 1px solid;
+}
+
+td {
+    height: 10%;
+    font-weight: 200;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-shadow: 0px 3px 20px #00000070;
+    border-bottom: #986E6E 1px solid;
+}
+
+tr {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.premierDuClassement {
+    text-shadow: 0px 0px 15px #d6ba00 !important;
+}
+
+/*FIN partie gauche*/
+
+@media (max-width: 576px){
+  #partieClassement h1 {
+      font-size: 20px;
+  }
+  #partieLogo {
+      padding-right: 1.5rem;
+      padding-bottom: 1rem;
+  }
+  #partieLogo img {
+      width: 4rem;
+  }
+}

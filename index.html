@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+ <head> 
+    <title>Nekomoon | Le clicker game de l'espace !</title>
+    <link rel='stylesheet' href='styles/index.css' type='text/css'/>
+    <link rel="shortcut icon" type="image/png" href="images/nekomoon_logonb.svg"/><!--icône qui apparaît à côter du titre de la page-->
+    <script type="text/javascript" src="js/index.js"></script> <!--referencer fichiers javascript-->
+    <noscript>
+    Javascript est désactivé sur votre navigateur. Veuillez le réactivez afin de permettre le bon fonctionnement du site.</noscript>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><!--afficher les accents de la langue-->
+    <meta name="description" content="Un clicker game au thème fantastique et frais avec ses mignons personnages : les Nekomoons !"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"> <!-- assurer que les pages fonctionnent bien dans une grande variété de tailles et d'orientations d'écran -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet"><!--Importation de la police Fredoka-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,700;1,300;1,400;1,700&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet"><!--Importation de la police Comic Neue-->
+</head>
+
+ <body>
+    <header id="header">
+        <!--MENU: INFO + REGLES DU JEU-->
+        <div id="infoMenu" onclick="afficherInfos()">
+            <img src="images/info_logo.png" alt="Info">
+        </div>
+        <div id="gameRulesMenu" onclick="afficherReglesDuJeu()">
+            Règles du jeu
+        </div>
+        
+        <!-- FIN DE MENU: INFO + REGLES DU JEU-->
+    </header>
+
+    <!-- FENETRES DE INFO + REGLES DU JEU-->
+    <div id="fenetreReglesDuJeu">
+            <div class="fermerFenetre"><a href="#" onclick="afficherReglesDuJeu()">X</a></div>
+            <div>
+                <h1 class="textShadow">RÈGLES DU JEU</h1>
+                <h2 class="textShadow">JEU</h2>
+                <p>C'est la guerre sur la planète Moonko-world et Nekomoon cherche à s'échapper.
+                    Malheureusement, il n'a pas assez de Click-moon pour pouvoir changer de planète.
+                    Cliques sur Nekomoon pour faire augmenter son nombre de Clicks-moon ! 
+                    Et utilise les afin d'acheter des bonus qui te permettront de les multiplier.
+                    En fonction de ton nombre de points, permet à Nekomoon de pouvoir changer de planète !
+                </p>
+                <h2 class="textShadow">BONUS</h2>
+                <p>Voici les 3 bonus multiplicateurs de Clicks-moon :</p><br>
+                <div id="lesTroisBonus"><!--rassemble les 3 bonus-->
+                    <div class="bonusContainer"><h3 style="color: deeppink;">Pinkuko</h3><img src="images/Pinkuko.png" alt="Planète Pinkuko" width="60px" height="auto"><p>+10 points à chaque clic</p></div>
+                    <div class="bonusContainer"><h3 style="color: deepskyblue;">Aoiko</h3><img src="images/Aoiko.png" alt="Planète Aoiko" width="60px" height="auto"><p>+10 points toutes les secondes</p></div>
+                    <div class="bonusContainer"><h3 style="color: greenyellow;">Midoriko</h3><img src="images/Midoriko.png" alt="Planète Midoriko" width="59px" height="auto"><p>+1000 points à chaque clic et toutes les secondes</p></div>
+                </div>
+            </div>
+        </div>
+        <div id="fenetreInfoMenu"><!--La fenêtre Info qui s'affiche-->
+            <div class="fermerFenetre"><a href="#" onclick="afficherInfos()">X</a></div>
+            <div>
+                <h1 class="textShadow">INFOS</h1>
+                <h2 class="textShadow">Qu'est-ce que Nekomoon ?</h2>
+                <p>Nekomoon est un jeu de type clicker, créé dans le cadre d'un projet scolaire (SAE). <br>
+                    L'objectif est la réalisation du design d'un cookie clicker, au sein d’une application web, ainsi que sa mise en ligne. <br>
+                    Le projet est contraint d'être effectué par groupe de 3 personnes.
+                    </p>
+                <h2 class="textShadow">Qui sont les créateurs ?</h2>
+                <p>
+                Yasmine BADAROU - Développeuse <br>
+                Rose MALDONADO - Graphiste, développeuse <br>
+                Bryan ROY - Graphiste, développeur
+                </p>
+            </div>
+        </div>
+        <!-- FIN DE FENETRES DE INFO + REGLES DU JEU-->
+        <div id="responsive">
+    <!--LOGO + FORMULAIRE (div gauche + div droite)-->
+    <div id="divLogoEtFormulaire">
+        <div id="divLogo"><!--Partie du logo (gauche)-->
+            <img src="images/purple_nekomoon.png" alt="Nekomoon violet">
+        </div>
+
+        <div id="divFormulaire"><!--Partie du formulaire (droite)-->
+            <img src="images/logo_nekomoon_blanc.png" alt="Logo Nekomoon">
+                    <form action="jeu.html" method="post">
+                        <label for="username">Choisis ton pseudo pour jouer !</label>
+                        <span onmouseover="afficherBulleDinfo()" onmouseout="afficherBulleDinfo()" onclick="afficherBulleDinfo()">?<div id="infoInput">Choisis un pseudo de 5 caractères minimum.</div></span><input type="text" required minlength="5" placeholder="Entrer un pseudo" id="inputusername" name="username" onkeyup="activerBtn(this)">
+                        <button onclick="saveinfo()" class="buttonNonValidPseudo" id="btnJouer" disabled="true">jouer</button>
+                    </form>
+        </div>
+    </div>
+    <!--FIN DE LOGO + FORMULAIRE (div gauche + div droite)-->
+    </div>
+ </body>
+</html>

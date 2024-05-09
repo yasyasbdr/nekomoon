@@ -1,0 +1,1036 @@
+body{
+   margin:0 50px;
+   background-image: url("../images/background_purple.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+    position: absolute;
+    z-index: 1;
+}
+
+#infoMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4D1E62;
+    height: 40px;
+    width: 70px;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0px 3px 15px #fafafa40;
+    transition: 0.3s;
+}
+
+#infoMenu img {
+    height: 105%;
+    width: auto;
+}
+
+#gameRulesMenu {
+    padding-top: 6px;
+    text-align: center;
+    background-color: #fafafa;
+    max-height: 40px;
+    width: 180px;
+    border-radius: 0px 0px 30px 30px;
+    font-family: "fredoka";
+    color: #4D1E62;
+    font-weight: 600;
+    font-size: 23px;
+    box-shadow: 0px 3px 15px #fafafa40;
+    text-shadow: 0px 3px 6px #00000026;
+    transition: 0.3s;
+}
+
+#infoMenu:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 15px #fafafa80;
+}
+
+#gameRulesMenu:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 15px #fafafa80;
+}
+/*FIN DU HEADER*/
+
+/*FENETRES POP UP POUR INFO ET REGLES DU JEU*/
+/*fenetre info*/
+#fenetreInfoMenu {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    max-height: 65%;
+    padding: 40px 50px 40px 50px;
+    box-shadow: 0px 0px 20px #fafafa70;
+    background-color: #3c0046;
+    border-radius: 50px 100px;
+    z-index: 10;
+    font-family: "Fredoka";
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  #fenetreInfoMenu.active {
+    top: 45%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  
+  .disableSelect {
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  .fermerFenetre {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 40px;
+  font-family: "Comic Neue";
+  font-weight: bold;
+  margin-top: 10px;
+  }
+  
+  .fermerFenetre a {
+    text-decoration: none;
+    color: #fafafa;
+    border-radius: 50px;
+    background-color: #54236b;
+    width: 4%;
+    height: 8%;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    transition: 0.2s;
+  }
+  
+  .fermerFenetre a:hover {
+    color: #54236b;
+    background-color: #fafafa;
+    box-shadow: 1px 1px 15px #bebebe;
+    font-weight: 600;
+  }
+  
+  #fenetreInfoMenu h1 {
+    margin-top: -30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #54236b;
+    border-radius: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  
+  #fenetreInfoMenu h2 {
+    color: #c0289f;
+    font-size: 28px;
+    margin-bottom: -10px;
+  }
+  
+  #fenetreInfoMenu p {
+    font-size: 20px;
+    color: #fee8ff;
+    line-height: 28px;
+  }
+  
+  .textShadow {
+    text-shadow: #00000070 1px 1px 10px;
+  }
+  
+  /*fenetre regles du jeu*/
+  #fenetreReglesDuJeu {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    max-height: 85%;
+    padding: 30px 50px 30px 50px;
+    box-shadow: 0px 0px 20px #fafafa70;
+    background-color: #3c0046;
+    border-radius: 50px 100px;
+    z-index: 10;
+    font-family: "Fredoka";
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  
+  #fenetreReglesDuJeu.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  
+  #fenetreReglesDuJeu h1 {
+    margin-top: -30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fafafa;
+    background-color: #54236b;
+    border-radius: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 5px;
+  }
+  
+  #fenetreReglesDuJeu h2 {
+    color: #c0289f;
+    font-size: 28px;
+    margin-bottom: -10px;
+  }
+  
+  #fenetreReglesDuJeu p {
+    font-size: 20px;
+    color: #fee8ff;
+    line-height: 28px;
+  }
+  
+  #lesTroisBonus {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: -40px;
+  }
+  
+  .bonusContainer {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #lesTroisBonus h3 {
+    font-size: 21px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-shadow: #fafafa80 1px 1px 15px;
+  }
+  
+  #lesTroisBonus img {
+    text-shadow: #fafafa70 1px 1px 15px;
+    -webkit-filter: drop-shadow(2px 1px 10px #fafafa50);
+    filter: drop-shadow(2px 1px 10px #fafafa50);
+    transition: 0.3s;
+  }
+  
+  #lesTroisBonus img:hover {
+    -webkit-filter: drop-shadow(2px 1px 15px #fafafa80);
+    filter: drop-shadow(2px 1px 15px #fafafa80);
+    cursor: pointer;
+  }
+  
+  #lesTroisBonus p {
+    font-size: 15px;
+    line-height: normal;
+    text-align: center;
+    padding: 10px;
+  }
+
+  #fenetreInfoMenu.active {
+    top: 45%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  #fenetreReglesDuJeu.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  /*FIN FENETRES POP UP POUR INFO ET REGLES DU JEU*/
+
+/*HAUT DE LA PAGE (CLASSEMENT + COMPTEUR DE CLICS)*/
+#contenuDeLaPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#clicsEtClassementContainer {
+    height: 150px;
+    width: 100%;
+    display: flex;
+}
+
+#clicsContainer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#classementContainer {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#compteurDeClicMoon {
+    height: 100px;
+    width: 60%;
+    background-color: #351D4B;
+    font-family: "Fredoka";
+    box-shadow: inset 0px 3px 15px #fafafa90, 0px 3px 30px #00000045;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    color: #fafafa;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+#compteurDeClicMoon img {
+    width: 45px;
+    height: auto;
+    margin-left: 16%;
+}
+
+#compteurDeClicMoon h1 {
+    font-size: 28px;
+    margin-top: -62px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#compteurDeClicMoon p {
+    font-size: 60px;
+    margin: -20px auto auto auto;
+    font-weight: 600;
+}
+
+#carreClassementRose {
+    width: 80px;
+    height: 80px;
+    background-color: #F41EA6;
+    box-shadow: inset 0px 3px 15px #fafafa, 0px 3px 15px #00000045;
+    border-radius: 35px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#carreClassementRose:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 3px 15px #fafafa, 0px 3px 15px #fafafa45;
+
+}
+
+#carreClassementRose p {
+    text-align: center;
+    color: #fafafa;
+    font-family: "Fredoka";
+    text-shadow: 0px 0px 15px #000000;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#carreClassementRose img {
+    width: 55px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+#carreClassementRose a {
+    text-decoration: none;
+}
+/*FIN HAUT DE LA PAGE (CLASSEMENT + COMPTEUR DE CLICS)*/
+
+/*PARTIE JEU + BONUS, SUCCES, NEKOMOONS*/
+#jeuContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 20px 0px;
+}
+
+#succesEtBonus {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    justify-content: space-around;
+    font-family: "Fredoka";
+    width: 25%;
+}
+/*bonus*/
+#bonusContainer {
+    background-color: #000000b0;
+    width: 300px;
+    height: 150px;
+    box-shadow: inset 0px 3px 8px #fafafa70, 0px 3px 20px #00000090;
+    border-radius: 35px;
+}
+
+#bonusContainer h1 {
+    color: #fafafa;
+    font-weight: 600;
+    margin-left: 10px;
+    text-shadow: 0px 3px 4px #42004B;
+}
+
+#bonusContainer span {
+    display: flex;
+    align-items: center;
+    margin-top: -40px;
+    margin-left: 10px;
+}
+
+#bonusContainer span img {
+    width: 32px;
+    height: 100%;
+    margin-left: 10px;
+}
+
+#lesTroisBonus {
+    display: flex;
+    margin-top: -65px;
+}
+
+.bonusContainer {
+    width: 33.33%;
+    margin-top: 30px;
+    color: #fafafa;
+    font-weight: 600;
+}
+
+.bonusContainer img {
+    width: 60px;
+    height: auto;
+    margin-bottom: -10px;
+}
+
+.bonusContainer #compteurBonusPinkuko {
+    margin-bottom: -30px;
+    margin-right: 40px;
+    z-index: 1;
+    text-shadow: 0px 0px 6px #a900b5;
+    font-size: 19px;
+    visibility: hidden;
+}
+
+.bonusContainer #compteurBonusAoiko {
+    margin-bottom: -30px;
+    margin-right: 50px;
+    z-index: 1;
+    text-shadow: 0px 0px 6px #a900b5;
+    font-size: 19px;
+    visibility: hidden;
+}
+
+.bonusContainer #compteurBonusMidoriko {
+    margin-bottom: -30px;
+    margin-right: 40px;
+    z-index: 1;
+    text-shadow: 0px 0px 6px #a900b5;
+    font-size: 19px;
+    visibility: hidden;
+}
+
+#imgpinkuko.pasdebloque {/*Quand bonus pinkuko n'est pas débloqué*/
+  user-select: none;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#imgaoiko.pasdebloque {/*Quand bonus pinkuko n'est pas débloqué*/
+  user-select: none;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#imgmidoriko.pasdebloque {/*Quand bonus pinkuko n'est pas débloqué*/
+  user-select: none;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/*succès*/
+#succesContainer {
+    background-color: #ffbb009e;
+    width: 320px;
+    height: 170px;
+    box-shadow: inset 0px 3px 12px #00000070, 0px 3px 20px #00000090;
+    border-radius: 35px;
+}
+
+#succesContainer h1 {
+    color: #fafafa;
+    font-weight: 600;
+    text-shadow: 0px 3px 4px #42004B;
+    margin-left: 5px;
+}
+
+#succesContainer div {
+    display: flex;
+    align-items: center;
+    margin-top: -40px;
+    margin-left: 10px;
+}
+
+#succesContainer img {
+    width: 40px;
+    height: 100%;
+    -webkit-filter: drop-shadow(0px 3px 7px #42004B);
+    filter: drop-shadow(0px 3px 7px #42004B);
+    transform: rotate(-3deg)
+}
+
+table {
+    width: 100%;
+    height: 65%;
+    color: #fafafa;
+    border-radius: 25px;
+    transition: 0.2s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 20px auto 2px auto;
+}
+
+td {
+    font-weight: 500;
+    font-size: 15px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    text-shadow: 0px 3px 20px #00000070;
+    border-bottom: #A37A35 1px solid;
+}
+
+.removeBottomBar {
+  border-bottom: none;
+}
+
+tr {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+table img {
+    width: 25px!important;
+    height: auto!important;
+}
+
+#lesSucces span {
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  margin: auto 40px;
+  color: #765927;
+  text-shadow: 0px 0px 5px #00000030;
+}
+
+#succesUn.succesnonobtenu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#succesDeux.succesnonobtenu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#succesTrois.succesnonobtenu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#succesQuatre.succesnonobtenu {
+  opacity: 0;
+  visibility: hidden;
+}
+/*PARTIE JEU + BONUS, SUCCES, NEKOMOONS*/
+
+/*PARTIE CLICKER NEKOMOON*/
+#clickerNekomoon {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+}
+
+#clickerNekomoon img {
+    width: 530px;
+    height: auto;
+    position: absolute;
+    margin-left: -50px;
+    -webkit-filter: drop-shadow(2px 3px 100px #FFC0AD);
+    filter: drop-shadow(2px 3px 100px #FFC0AD);
+    transition: 0.3s;
+}
+
+#clickerNekomoon img:hover {
+  cursor: pointer;
+}
+/*FIN PARTIE CLICKER NEKOMOON*/
+
+/*PARTIE SCORE ET SKINS*/
+#pseudoEtNekomoons {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  justify-content: space-around;
+  font-family: "Fredoka";
+  width: 25%;
+  color: #fafafa;
+}
+
+/*boite score et pseudonyme*/
+#pseudoScoreContainer {
+  background-color: #00000099;
+  width: 300px;
+  height: 135px;
+  box-shadow: inset 0px 3px 8px #fafafa20, 0px 3px 20px #00000090;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+#pseudoScoreContainer h1 {
+  text-align: center;
+  font-weight: 600;
+}
+
+#pseudonyme {
+  font-size: 26px;
+}
+
+#traitViolet {
+  width: 100px;
+  height: 1px;
+  background-color: #91519B;
+  margin: auto auto -10px auto;
+}
+
+/*boite skins*/
+#skinsContainer {
+  background-color: #00000099;
+  width: 290px;
+  height: 130px;
+  box-shadow: inset 0px 3px 8px #fafafa20, 0px 3px 20px #00000090;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#skinsContainer h1 {
+  font-weight: 600;
+  text-shadow: 0px 3px 3px #42004B;
+  margin-top: -20px;
+  margin-bottom: 13px;
+}
+
+#skinsContainer img {
+  width: 80px;
+  height: auto;
+}
+
+#skinsContainer img:hover {
+  -webkit-filter: drop-shadow(0px 0px 10px #fafafa);
+  filter: drop-shadow(0px 0px 10px #fafafa);
+  cursor: pointer;
+}
+
+#lesTroisSkins {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#skinVert {/*Skin vert non sélectioné*/
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+#skinBleu {/*Skin bleu non sélectioné*/
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+#skinViolet {/*Skin violet non sélectioné*/
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+#skinVert.selected {/*Skin vert sélectioné*/
+  opacity: 1;
+  -webkit-filter: drop-shadow(0px 0px 10px #fafafa40);
+  filter: drop-shadow(0px 0px 10px #fafafa80);
+}
+
+#skinBleu.selected {/*Skin bleu sélectioné*/
+  opacity: 1;
+  -webkit-filter: drop-shadow(0px 0px 10px #fafafa40);
+  filter: drop-shadow(0px 0px 10px #fafafa80);
+}
+
+#skinViolet.selected {/*Skin violet sélectioné*/
+  opacity: 1;
+  -webkit-filter: drop-shadow(0px 0px 10px #fafafa40);
+  filter: drop-shadow(0px 0px 10px #fafafa80);
+}
+/*FIN PARTIE SCORE ET SKINS*/
+
+/*RESPONSIVE DESIGN*/
+@media (min-width: 720px) and (max-width: 1350px){
+  #fenetreReglesDuJeu {
+    width: 45%;
+  }
+
+  #fenetreReglesDuJeu h1 {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 150%;
+  }
+
+  #fenetreReglesDuJeu h2 {
+    font-size: 160%;
+  }
+
+  #fenetreReglesDuJeu p {
+    font-size: 100%;
+    line-height: 18px;
+  }
+
+  #lesTroisBonus img {
+    width: 50px;
+    height: auto;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+
+  #lesTroisBonus p {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 90%;
+  }
+
+  #lesTroisBonus h3 {
+    font-size: 150%;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+
+  button:disabled {
+    color: #bebebe;
+    background-color: #33333350;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  #fenetreInfoMenu {
+    width: 40%;
+    max-height: 60%;
+    padding: 25px 25px 40px 40px;
+  }
+
+  #fenetreInfoMenu p {
+    font-size: 100%;
+    line-height: 18px;
+  }
+
+  #fenetreInfoMenu h2 {
+    font-size: 130%;
+  }
+
+  #fenetreInfoMenu h1 {
+    font-size: 140%;
+    margin-left: 25%;
+    margin-right: 30%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    padding: 8px 10px;
+    margin-right: 10px;
+  }
+
+  form span {
+    margin-top: 55.2px;
+    margin-left: 310px;
+  }
+
+  #infoInput {
+    width: 200px;
+    margin-top: 12px;
+    margin-left: -190px;
+    border-radius: 30px 10px 30px 30px;
+  }
+  
+}
+
+@media (max-width: 1350px){
+  label { 
+    font-size: 24px;
+    }
+
+    button:disabled {
+      color: #bebebe;
+      background-color: #33333350;
+    }
+  
+    button:disabled:hover {
+      cursor: default ;
+      box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+    }
+
+    #fenetreInfoMenu {
+      width: 55%;
+      max-height: 60%;
+      padding: 25px 25px 40px 40px;
+    }
+  
+    #fenetreInfoMenu p {
+      font-size: 100%;
+      line-height: 18px;
+    }
+  
+    #fenetreInfoMenu h2 {
+      font-size: 130%;
+    }
+  
+    #fenetreInfoMenu h1 {
+      font-size: 140%;
+      margin-left: 25%;
+      margin-right: 30%;
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+
+    .fermerFenetre a {
+      font-size: 15px;
+      padding: 8px 10px;
+      margin-right: 10px;
+    }
+}
+@media (max-width: 720px){
+
+  button:disabled {
+    color: #bebebe;
+    background-color: #33333350;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  button {
+    margin-top: 0;
+      height: 60px;
+      width: 180px;
+      font-size: 30px;
+  }
+
+  label { 
+    font-size: 20px;
+    }
+
+    #divFormulaire img {
+      width: 60%;
+    }
+
+    input {
+      width: 90%;
+      font-size: 15px;
+    }
+
+    #infoMenu {
+      height: 35px;
+      width: 55px;
+  }
+
+  #gameRulesMenu {
+    max-height: 35px;
+    width: 150px;
+    font-size: 18px;
+  }
+
+  header {
+    width: 230px;
+  }
+
+  #infoMenu img {
+    height: 95%;
+  }
+
+  form span {
+    margin-top: 49px;
+    margin-left: 250px;
+    z-index: 1;
+  }
+
+  #infoInput {
+    width: 200px;
+    margin-top: -70px;
+    margin-left: -200px;
+    border-radius: 30px 30px 10px 30px;
+  }
+}  
+
+@media (max-width: 576px){ 
+  #divLogoEtFormulaire {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #responsive {
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+
+  header {
+    width: 170px;
+    margin-left: -40px;
+  }
+
+  #infoMenu {
+    height: 29px;
+    width: 42px;
+  }
+
+  #gameRulesMenu {
+    height: 25px;
+    width: 120px;
+    font-size: 16px;
+    padding-top: 4px;
+  }
+
+  #divFormulaire img {
+    width: 100%;
+  }
+
+  #divLogo img {
+    width: 160%;
+    margin-left: -40%;
+  }
+
+  label {
+    font-size: 21px;
+    width: 300px;
+  }
+  
+  button:disabled {
+    color: #bebebe;
+    background-color: #33333350;
+  }
+
+  button:disabled:hover {
+    cursor: default ;
+    box-shadow: inset 0px 3px 30px #fafafa, 0px 3px 10px #5D005A75;
+  }
+
+  #fenetreReglesDuJeu {
+    width: 70%;
+    max-height: 75%;
+    padding: 25px 25px 30px 25px;
+  }
+
+  #fenetreReglesDuJeu h1 {
+    font-size: 110%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  #fenetreReglesDuJeu h2 {
+    font-size: 100%;
+  }
+
+  #fenetreReglesDuJeu p {
+    font-size: 80%;
+    line-height: 14px;
+  }
+
+  #lesTroisBonus {
+    font-size: 85%;
+  }
+
+  #lesTroisBonus img {
+    width: 30px;
+    height: auto;
+  }
+
+  .fermerFenetre a {
+    font-size: 15px;
+    margin-right: 10px;
+    padding: 5px 10px;
+  }
+
+  #lesTroisBonus p {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  #lesTroisBonus h3 {
+    font-size: 120%;
+  }
+
+  #fenetreInfoMenu {
+    width: 70%;
+    max-height: 60%;
+    padding: 25px 25px 40px 40px;
+  }
+
+  #fenetreInfoMenu p {
+    font-size: 80%;
+    line-height: 15px;
+  }
+
+  #fenetreInfoMenu h2 {
+    font-size: 100%;
+  }
+
+  #fenetreInfoMenu h1 {
+    font-size: 110%;
+    margin-left: 25%;
+    margin-right: 30%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  form span {
+    margin-top: 52px;
+    margin-left: 274px;
+    z-index: 1;
+    height: 18px;
+    width: 18px;
+    font-size: 15px;
+  }
+}
+/*FIN RESPONSIVE DESIGN*/
