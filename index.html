@@ -76,11 +76,14 @@
 
         <div id="divFormulaire"><!--Partie du formulaire (droite)-->
             <img src="images/logo_nekomoon_blanc.png" alt="Logo Nekomoon">
-                    <form action="jeu.html" method="post">
-                        <label for="username">Choisis ton pseudo pour jouer !</label>
-                        <span onmouseover="afficherBulleDinfo()" onmouseout="afficherBulleDinfo()" onclick="afficherBulleDinfo()">?<div id="infoInput">Choisis un pseudo de 5 caractères minimum.</div></span><input type="text" required minlength="5" placeholder="Entrer un pseudo" id="inputusername" name="username" onkeyup="activerBtn(this)">
-                        <button onclick="saveinfo()" class="buttonNonValidPseudo" id="btnJouer" disabled="true">jouer</button>
-                    </form>
+            <form action="jeu.html" method="get">
+                <label for="username">Choisis ton pseudo pour jouer !</label>
+                <span onmouseover="afficherBulleDinfo()" onmouseout="afficherBulleDinfo()" onclick="afficherBulleDinfo()">?
+                    <div id="infoInput">Choisis un pseudo de 5 caractères minimum.</div>
+                </span>
+                <input type="text" required minlength="5" placeholder="Entrer un pseudo" id="inputusername" name="username" onkeyup="activerBtn(this)">
+                <button onclick="saveinfo()" class="buttonNonValidPseudo" id="btnJouer" disabled="true">jouer</button>
+            </form>            
         </div>
     </div>
     <!--FIN DE LOGO + FORMULAIRE (div gauche + div droite)-->

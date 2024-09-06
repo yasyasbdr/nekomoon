@@ -10,6 +10,31 @@ var compteurBonusMidoriko = 0;
 
 var i=0;
 
+// Fonction pour récupérer les paramètres de l'URL
+function getQueryParam(param) {
+  let urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+window.onload = function () {
+  // Récupérer le pseudo depuis l'URL
+  let pseudonyme = getQueryParam('username');
+
+  if (pseudonyme) {
+    // Sauvegarder le pseudo dans le sessionStorage
+    sessionStorage.setItem('username', pseudonyme);
+    sessionStorage.setItem('score', 0); // Initialise le score à 0 si non présent
+  } else {
+    pseudonyme = sessionStorage.getItem('username');
+  }
+
+  // Afficher le pseudo dans le jeu
+  document.getElementById("pseudonyme").innerText = pseudonyme;
+
+  // Récupérer et afficher le score depuis le sessionStorage
+  let score = Number(sessionStorage.getItem('score'));
+  document.getElementById("score").innerHTML = "Score : " + score.toLocaleString();
+};
 
 //Affichage des fenêtres info et règles du jeu
 function afficherInfos(){
