@@ -1,7 +1,7 @@
 function classement() {
     httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = fonction_classement;
-    let lienapi = `https://sae-301.azurewebsites.net/get-leaderboard.php`;
+    let lienapi = `https://nekomoon.netlify.app/js/data.json`;
     httpRequest.open('GET', lienapi, true);
     httpRequest.setRequestHeader("authorization", true);
     httpRequest.send();
